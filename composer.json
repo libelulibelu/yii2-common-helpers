@@ -1,5 +1,5 @@
 {
-  "name": "libelulasoft/yii2-common-helpers",
+  "name": "libelula/yii2-common-helpers",
   "description": "Common helpers para yii2 y mongodb",
   "type": "yii2-extension",
   "keywords": [
@@ -15,14 +15,17 @@
     }
   ],
   "require": {
-    "php": ">=7.0.0",
-    "yiisoft/yii2": "~2.0.41",
-    "mongodb/mongodb": "^1.8.0",
-    "yiisoft/yii2-mongodb": "^2.0"
+    "php": ">=8.2",
+    "yiisoft/yii2": "~2.0.54",
+    "mongodb/mongodb": "^2.3",
+    "yiisoft/yii2-mongodb": "^3.0"
   },
   "config": {
     "fxp-asset": {
       "enabled": false
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
     }
   },
   "repositories": [
@@ -33,7 +36,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Libelulasoft\\CommonHelpers\\": "src"
+      "Libelula\\CommonHelpers\\": "src"
     }
   }
 }

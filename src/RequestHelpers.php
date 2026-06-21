@@ -1,6 +1,6 @@
 <?php
 
-namespace Libelulasoft\CommonHelpers;
+namespace Libelula\CommonHelpers;
 
 use Yii;
 use yii\web\HttpException;
@@ -48,7 +48,7 @@ class RequestHelpers
   /**
    * Cargamos los datos del post
    * 
-   * @throws HttpExeption - Si no tenemos valores en el post
+   * @throws HttpException - Si no tenemos valores en el post
    */
   static function getPostDataOrFail(string $message = 'No data found')
   {
@@ -77,11 +77,12 @@ class RequestHelpers
   /**
    * Obtenemos los datos post como un objeto 
    */
-  static function getPostDataAsObject() : \stdClass
+  static function getPostDataAsObject(): \stdClass
   {
     $data = self::getPostData();
     $data = DataHelpers::toObject($data);
-    if (is_array($data) || empty($data)) return new \stdClass;
+    if (is_array($data) || empty($data))
+      return new \stdClass;
     return $data;
   }
 

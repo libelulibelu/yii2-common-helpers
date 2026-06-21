@@ -1,9 +1,8 @@
-Helpers
-=======
+# Helpers
+
 Common helpers para yii2 y mongodb
 
-Installation
-------------
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -21,10 +20,9 @@ or add
 
 to the require section of your `composer.json` file.
 
-Migration
------
+## Migration
 
-Si se quiere migrar de la version `taguz91/yii2-common-helpers` a la nueva version `libelulasoft/yii2-common-helpers` se debe seguir los siguientes pasos: 
+Si se quiere migrar de la version `taguz91/yii2-common-helpers` a la nueva version `libelulasoft/yii2-common-helpers` se debe seguir los siguientes pasos:
 
 1. Eliminar la version actual
 
@@ -32,15 +30,14 @@ Si se quiere migrar de la version `taguz91/yii2-common-helpers` a la nueva versi
 composer remove taguz91/yii2-common-helpers
 ```
 
-2. Instalar la nueva version 
+2. Instalar la nueva version
 
 ```
 composer require libelulasoft/yii2-common-helpers
 ```
 
-3. Se debe cambiar el namespace `taguz91\CommonHelpers` a `Libelulasoft\CommonHelpers` en todo el proyecto.
+3. Se debe cambiar el namespace `taguz91\CommonHelpers` a `Libelula\CommonHelpers` en todo el proyecto.
 
 4. Probar que todo funcione de forma correcta.
 
-Usage
------
+## Usage

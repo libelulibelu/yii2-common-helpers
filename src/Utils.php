@@ -1,6 +1,6 @@
 <?php
 
-namespace Libelulasoft\CommonHelpers;
+namespace Libelula\CommonHelpers;
 
 use MongoDB\BSON\UTCDateTime;
 use Yii;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Libelulasoft\CommonHelpers;
+namespace Libelula\CommonHelpers;
 
 use Yii;
 use yii\web\Response;
@@ -11,7 +11,7 @@ class ResponseHelpers
   static function toHTMLResponse()
   {
     Yii::$app->response->format = Response::FORMAT_HTML;
-    Yii::$app->response->headers->remove('Content-Type', 'application/json');
+    Yii::$app->response->headers->remove('Content-Type');
   }
 
   static function toAPIResponse()
