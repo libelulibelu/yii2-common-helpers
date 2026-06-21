@@ -97,11 +97,11 @@ class DataHelpers
   }
 
   /**
-   * Create a chunck array
+   * Create a chunk array
    */
-  static function splitList(array $list, int $lengh = 2)
+  static function splitList(array $list, int $length = 2)
   {
-    $count = count($list) / $lengh;
+    $count = count($list) / $length;
     return array_chunk($list, floor($count));
   }
 

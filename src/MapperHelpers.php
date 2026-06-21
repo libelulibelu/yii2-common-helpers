@@ -21,7 +21,7 @@ class MapperHelpers
     }
 
     /**
-     * Matriz to array key value, cocat the old keys
+     * Matriz to array key value, concat the old keys
      * ```
      * // Datos entrada
      * $data = [

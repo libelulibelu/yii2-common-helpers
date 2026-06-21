@@ -6,9 +6,9 @@ class StringHelpers
 {
 
     /**
-     * Repet a value if multiple is minus to 0 not repet nothing
+     * Repeat a value; if multiple is less than 0, repeat nothing
      */
-    static function repet(string $value, int $multiple)
+    static function repeat(string $value, int $multiple)
     {
         return str_repeat($value, $multiple > 0 ? $multiple : 0);
     }

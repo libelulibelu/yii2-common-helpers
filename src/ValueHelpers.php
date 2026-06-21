@@ -38,7 +38,7 @@ class ValueHelpers
     }
 
     /**
-     * Round number with decumal precision
+     * Round number with decimal precision
      */
     static function round(float $value, int $precision = 2): float
     {
@@ -83,7 +83,7 @@ class ValueHelpers
      * 1,000.01 => 1000.01
      * ```
      */
-    static function strintToFloat(string $number): float
+    static function stringToFloat(string $number): float
     {
         return floatval(preg_replace("/[^-0-9\.]/", "", $number));
     }
