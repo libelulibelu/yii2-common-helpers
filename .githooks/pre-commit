@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Pre-commit hook: run the PHPUnit test suite and abort the commit if it fails.
+# Activated via:  git config core.hooksPath .githooks
+# (composer install/update sets this automatically — see composer.json scripts).
+
+echo "Running test suite before commit..."
+
+if [ -x vendor/bin/phpunit ]; then
+  vendor/bin/phpunit
+  status=$?
+else
+  echo "PHPUnit not found in vendor/bin. Run 'composer install' first." >&2
+  exit 1
+fi
+
+if [ $status -ne 0 ]; then
+  echo "Tests failed — commit aborted." >&2
+  exit 1
+fi
+
+echo "Tests passed."
+exit 0

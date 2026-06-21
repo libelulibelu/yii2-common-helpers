@@ -80,6 +80,9 @@ class RequestHelpers
   public static function getPostDataAsObject(): \stdClass
   {
     $data = self::getPostData();
+    if (empty($data)) {
+      return new \stdClass;
+    }
     $data = DataHelpers::toObject($data);
     if (is_array($data) || empty($data))
       return new \stdClass;
