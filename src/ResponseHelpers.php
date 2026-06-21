@@ -8,24 +8,24 @@ use yii\web\Response;
 class ResponseHelpers
 {
 
-  static function toHTMLResponse()
+  public static function toHTMLResponse()
   {
     Yii::$app->response->format = Response::FORMAT_HTML;
     Yii::$app->response->headers->remove('Content-Type');
   }
 
-  static function toAPIResponse()
+  public static function toAPIResponse()
   {
     Yii::$app->response->format = Response::FORMAT_JSON;
     Yii::$app->response->headers->add('Content-Type', 'application/json');
   }
 
-  static function isJSON()
+  public static function isJSON()
   {
     return Yii::$app->response->format === Response::FORMAT_JSON || Yii::$app->request->isAjax;
   }
 
-  static function mergeMessageResponse(string $message, array $data): array
+  public static function mergeMessageResponse(string $message, array $data): array
   {
     $default = [
       'transaccion' => true,
@@ -34,7 +34,7 @@ class ResponseHelpers
     return array_merge($default, $data);
   }
 
-  static function mergeBasicError(string $message, array $data): array
+  public static function mergeBasicError(string $message, array $data): array
   {
     $default = [
       'transaccion' => false,
@@ -43,7 +43,7 @@ class ResponseHelpers
     return array_merge($default, $data);
   }
 
-  static function dataResponse($data): array
+  public static function dataResponse($data): array
   {
     return [
       'transaccion' => true,
@@ -54,7 +54,7 @@ class ResponseHelpers
   /**
    * Respuesta correcta con un mensaje
    */
-  static function messageResponse(string $message): array
+  public static function messageResponse(string $message): array
   {
     return [
       'transaccion' => true,
@@ -62,7 +62,7 @@ class ResponseHelpers
     ];
   }
 
-  static function mergeResponse(array $data): array
+  public static function mergeResponse(array $data): array
   {
     $default = [
       'transaccion' => true,

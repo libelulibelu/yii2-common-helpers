@@ -11,7 +11,7 @@ class RequestHelpers
   /**
    * @return null|string
    */
-  static function getUserIP()
+  public static function getUserIP()
   {
     $valids = [
       'HTTP_CLIENT_IP',
@@ -39,7 +39,7 @@ class RequestHelpers
   /**
    * Configuracion para tareas que tardan y usan mucha memoria 
    */
-  static function longRequest()
+  public static function longRequest()
   {
     ini_set('memory_limit', '2048M');
     set_time_limit(300);
@@ -50,7 +50,7 @@ class RequestHelpers
    * 
    * @throws HttpException - Si no tenemos valores en el post
    */
-  static function getPostDataOrFail(string $message = 'No data found')
+  public static function getPostDataOrFail(string $message = 'No data found')
   {
     $data = self::getPostData();
     if (empty($data)) {
@@ -63,7 +63,7 @@ class RequestHelpers
    * Cargamos los datos del post
    * @return array
    */
-  static function getPostData()
+  public static function getPostData()
   {
     $data = Yii::$app->request->post();
     if (empty($data)) {
@@ -77,7 +77,7 @@ class RequestHelpers
   /**
    * Obtenemos los datos post como un objeto 
    */
-  static function getPostDataAsObject(): \stdClass
+  public static function getPostDataAsObject(): \stdClass
   {
     $data = self::getPostData();
     $data = DataHelpers::toObject($data);
@@ -86,12 +86,12 @@ class RequestHelpers
     return $data;
   }
 
-  static function getRaw()
+  public static function getRaw()
   {
     return Yii::$app->request->rawBody;
   }
 
-  static function getRawPost(bool $toArray = false)
+  public static function getRawPost(bool $toArray = false)
   {
     return json_decode(self::getRaw(), $toArray);
   }

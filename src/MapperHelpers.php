@@ -10,7 +10,7 @@ class MapperHelpers
      * @param string   $prefix
      * @param string[] $list
      */
-    static function hashRemovePrefix(string $prefix, array $list): array
+    public static function hashRemovePrefix(string $prefix, array $list): array
     {
         $keys = array_map(function (string $value) use ($prefix) {
             $key = str_replace($prefix, '', $value);
@@ -37,7 +37,7 @@ class MapperHelpers
      * ];
      * ```
      */
-    static function hashMatriz(array $data, string $root = ''): array
+    public static function hashMatriz(array $data, string $root = ''): array
     {
         $newData = [];
         foreach ($data as $name => $value) {

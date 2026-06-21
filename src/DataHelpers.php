@@ -10,13 +10,13 @@ use yii\helpers\Json;
 class DataHelpers
 {
 
-  static function toArray(
+  public static function toArray(
     $data
   ): array {
     return Json::decode(Json::encode($data));
   }
 
-  static function toObject(
+  public static function toObject(
     $data
   ): \stdClass {
     return Json::decode(Json::encode($data), false);
@@ -25,7 +25,7 @@ class DataHelpers
   /**
    * @param array[] $list
    */
-  static function arrayGroupBy(array $list, string $key): array
+  public static function arrayGroupBy(array $list, string $key): array
   {
     $groups = [];
     foreach ($list as $data) {
@@ -41,7 +41,7 @@ class DataHelpers
   /**
    * @param \stdClass[] $list
    */
-  static function objectGroupBy(array $list, string $attribute): array
+  public static function objectGroupBy(array $list, string $attribute): array
   {
     $groups = [];
     foreach ($list as $data) {
@@ -58,7 +58,7 @@ class DataHelpers
    * @param array[]
    * @param string $key
    */
-  static function arrayToHashMap(array $data, string $key)
+  public static function arrayToHashMap(array $data, string $key)
   {
     $newList = [];
     foreach ($data as $val) {
@@ -71,7 +71,7 @@ class DataHelpers
    * @param \stdClass
    * @param string $attribute
    */
-  static function objectToHashMap(array $data, string $attribute)
+  public static function objectToHashMap(array $data, string $attribute)
   {
     $newList = [];
     foreach ($data as $val) {
@@ -91,7 +91,7 @@ class DataHelpers
     return $key;
   }
 
-  static function isValidAttribute($key)
+  public static function isValidAttribute($key)
   {
     return is_string($key) && strpos($key, '-') === false;
   }
@@ -99,7 +99,7 @@ class DataHelpers
   /**
    * Create a chunk array
    */
-  static function splitList(array $list, int $length = 2)
+  public static function splitList(array $list, int $length = 2)
   {
     $count = count($list) / $length;
     return array_chunk($list, floor($count));
@@ -110,7 +110,7 @@ class DataHelpers
    * 
    * @param array[]
    */
-  static function toArrayFlat(array $matriz, bool $withKey = true)
+  public static function toArrayFlat(array $matriz, bool $withKey = true)
   {
     $flat = [];
     foreach ($matriz as $data) {
@@ -128,7 +128,7 @@ class DataHelpers
   /**
    * Matriz to flat array
    */
-  static function toArrayFlatRecursive(array $matriz, bool $withKey = true): array
+  public static function toArrayFlatRecursive(array $matriz, bool $withKey = true): array
   {
     $ite = new RecursiveIteratorIterator(new RecursiveArrayIterator($matriz));
     $flat = [];
@@ -146,7 +146,7 @@ class DataHelpers
   /**
    * Associative array with shuffle order
    */
-  static function shuffleAssoc(array $list): array
+  public static function shuffleAssoc(array $list): array
   {
     $keys = array_keys($list);
     shuffle($keys);
@@ -160,7 +160,7 @@ class DataHelpers
   /**
    * Sort a list from another 
    */
-  static function sortByList(array $list, string $attribute, array $sort): array
+  public static function sortByList(array $list, string $attribute, array $sort): array
   {
     $newList = [];
     $mapped = [];

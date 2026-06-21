@@ -17,7 +17,7 @@ class CurlHelpers
    * 
    * @return array|object - Error obtenido, objeto base
    */
-  static function curl(
+  public static function curl(
     string $url,
     array $data,
     array $headers = [],
@@ -85,7 +85,7 @@ class CurlHelpers
    *
    * @return array|object
    */
-  static function post(string $url, array $data, bool $toArray = false, bool $bodyParams = false)
+  public static function post(string $url, array $data, bool $toArray = false, bool $bodyParams = false)
   {
     return self::curl($url, $data, [
       'Content-type: application/x-www-form-urlencoded'
@@ -95,7 +95,7 @@ class CurlHelpers
   /**
    * @return array|object
    */
-  static function get(string $url, bool $toArray = false)
+  public static function get(string $url, bool $toArray = false)
   {
     return self::curl($url, [], [], 'GET', $toArray);
   }
@@ -109,7 +109,7 @@ class CurlHelpers
    *
    * @return array|object
    */
-  static function executePOSTAuth(string $url, array $data, string $token)
+  public static function executePOSTAuth(string $url, array $data, string $token)
   {
     return self::curl($url, $data, [
       "Authorization: " . $token,
@@ -123,7 +123,7 @@ class CurlHelpers
    *
    * @return array|object
    */
-  static function executeGETAuth(string $url, array $data, string $token)
+  public static function executeGETAuth(string $url, array $data, string $token)
   {
     return self::curl($url, $data, [
       "Authorization: " . $token,

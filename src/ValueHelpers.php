@@ -5,7 +5,7 @@ namespace Libelula\CommonHelpers;
 class ValueHelpers
 {
 
-    static function toDotDecimals(
+    public static function toDotDecimals(
         $value,
         int $decimals = 2,
         string $separator = ''
@@ -13,7 +13,7 @@ class ValueHelpers
         return number_format($value, $decimals, '.', $separator);
     }
 
-    static function toCommaDecimals($value, int $decimals = 2)
+    public static function toCommaDecimals($value, int $decimals = 2)
     {
         return number_format($value, $decimals, ',', '');
     }
@@ -25,7 +25,7 @@ class ValueHelpers
      * 100 => 100
      * ```
      */
-    static function numberFormat(
+    public static function numberFormat(
         $value,
         int $decimals = 2,
         string $separator = ',' | '.',
@@ -40,7 +40,7 @@ class ValueHelpers
     /**
      * Round number with decimal precision
      */
-    static function round(float $value, int $precision = 2): float
+    public static function round(float $value, int $precision = 2): float
     {
         return round($value, $precision);
     }
@@ -48,7 +48,7 @@ class ValueHelpers
     /**
      * Round the number to minus value
      */
-    static function floorFormat(
+    public static function floorFormat(
         float $value,
         int $decimals = 2,
         string $separator = '.'
@@ -60,7 +60,7 @@ class ValueHelpers
         );
     }
 
-    static function floatFormat(
+    public static function floatFormat(
         float $value,
         bool $checkDecimals = false
     ) {
@@ -72,7 +72,7 @@ class ValueHelpers
         return number_format($value, $decimals);
     }
 
-    static function isDecimal($val): bool
+    public static function isDecimal($val): bool
     {
         return is_numeric($val) && floor($val) != $val;
     }
@@ -83,7 +83,7 @@ class ValueHelpers
      * 1,000.01 => 1000.01
      * ```
      */
-    static function stringToFloat(string $number): float
+    public static function stringToFloat(string $number): float
     {
         return floatval(preg_replace("/[^-0-9\.]/", "", $number));
     }
@@ -91,7 +91,7 @@ class ValueHelpers
     /**
      * Have 0 in the first index
      */
-    static function isBeforeZero($value)
+    public static function isBeforeZero($value)
     {
         if (empty($value) || $value == '0') {
             return false;
